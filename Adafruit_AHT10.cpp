@@ -210,9 +210,9 @@ void Adafruit_AHT10_Humidity::getSensor(sensor_t *sensor) {
   sensor->sensor_id = _sensorID;
   sensor->type = SENSOR_TYPE_RELATIVE_HUMIDITY;
   sensor->min_delay = 0;
-  sensor->min_value = 0;  // MATH
-  sensor->max_value = 1;  // MATH
-  sensor->resolution = 0; // depends on calibration values?
+  sensor->min_value = 0;
+  sensor->max_value = 100;
+  sensor->resolution = 2;
 }
 /**
     @brief  Gets the humidity as a standard sensor event
@@ -240,9 +240,9 @@ void Adafruit_AHT10_Temp::getSensor(sensor_t *sensor) {
   sensor->sensor_id = _sensorID;
   sensor->type = SENSOR_TYPE_AMBIENT_TEMPERATURE;
   sensor->min_delay = 0;
-  sensor->min_value = -40; // CHECK
-  sensor->max_value = 100; // CHECK
-  sensor->resolution = 0;  // depends on calibration data?
+  sensor->min_value = -40;
+  sensor->max_value = 85;
+  sensor->resolution = 0.3; // depends on calibration data?
 }
 /*!
     @brief  Gets the temperature as a standard sensor event
