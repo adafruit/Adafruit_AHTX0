@@ -77,7 +77,7 @@ bool Adafruit_AHT10::begin(TwoWire *wire, int32_t sensor_id) {
   uint8_t cmd[3];
 
   cmd[0] = AHT10_CMD_SOFTRESET;
-  if (! i2c_dev->write(cmd, 1) ) {
+  if (!i2c_dev->write(cmd, 1)) {
     return false;
   }
   delay(20);
@@ -85,25 +85,25 @@ bool Adafruit_AHT10::begin(TwoWire *wire, int32_t sensor_id) {
   cmd[0] = AHT10_CMD_CALIBRATE;
   cmd[1] = 0x08;
   cmd[2] = 0x00;
-  if (! i2c_dev->write(cmd, 3) ) {
+  if (!i2c_dev->write(cmd, 3)) {
     return false;
   }
 
   while (getStatus() & AHT10_STATUS_BUSY) {
     delay(10);
   }
-  if (! (getStatus() & AHT10_STATUS_CALIBRATED)) {
+  if (!(getStatus() & AHT10_STATUS_CALIBRATED)) {
     return false;
   }
 
   humidity_sensor = new Adafruit_AHT10_Humidity(this);
-  temp_sensor = new Adafruit_AHT10_Temp(this);  
+  temp_sensor = new Adafruit_AHT10_Temp(this);
   return true;
 }
 
 uint8_t Adafruit_AHT10::getStatus(void) {
   uint8_t ret;
-  if (! i2c_dev->read(&ret, 1) ) {
+  if (!i2c_dev->read(&ret, 1)) {
     return 0xFF;
   }
   return ret;
@@ -119,12 +119,12 @@ uint8_t Adafruit_AHT10::getStatus(void) {
 */
 /**************************************************************************/
 bool Adafruit_AHT10::getEvent(sensors_event_t *humidity,
-                               sensors_event_t *temp) {
+                              sensors_event_t *temp) {
   uint32_t t = millis();
 
   // read the data and store it!
   uint8_t cmd[3] = {AHT10_CMD_TRIGGER, 0x33, 0};
-  if (! i2c_dev->write(cmd, 3) ) {
+  if (!i2c_dev->write(cmd, 3)) {
     return false;
   }
 
@@ -133,7 +133,7 @@ bool Adafruit_AHT10::getEvent(sensors_event_t *humidity,
   }
 
   uint8_t data[6];
-  if (! i2c_dev->read(data, 6) ) {
+  if (!i2c_dev->read(data, 6)) {
     return false;
   }
   uint32_t h = data[1];
@@ -168,7 +168,7 @@ void Adafruit_AHT10::fillTempEvent(sensors_event_t *temp, uint32_t timestamp) {
 }
 
 void Adafruit_AHT10::fillHumidityEvent(sensors_event_t *humidity,
-                                        uint32_t timestamp) {
+                                       uint32_t timestamp) {
   memset(humidity, 0, sizeof(sensors_event_t));
   humidity->version = sizeof(sensors_event_t);
   humidity->sensor_id = _sensorid_humidity;

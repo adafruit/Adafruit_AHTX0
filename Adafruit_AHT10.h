@@ -25,11 +25,11 @@
 #include <Wire.h>
 
 #define AHT10_I2CADDR_DEFAULT 0x38 ///< AHT10 default i2c address
-#define AHT10_CMD_CALIBRATE   0xE1
-#define AHT10_CMD_TRIGGER     0xAC
-#define AHT10_CMD_SOFTRESET   0xBA
-#define AHT10_STATUS_BUSY     0x80
-#define AHT10_STATUS_CALIBRATED     0x08
+#define AHT10_CMD_CALIBRATE 0xE1
+#define AHT10_CMD_TRIGGER 0xAC
+#define AHT10_CMD_SOFTRESET 0xBA
+#define AHT10_STATUS_BUSY 0x80
+#define AHT10_STATUS_CALIBRATED 0x08
 
 class Adafruit_AHT10;
 
@@ -87,9 +87,8 @@ public:
   Adafruit_Sensor *getHumiditySensor(void);
 
 protected:
-
-  float _temperature,   ///< Last reading's temperature (C)
-        _humidity; ///< Last reading's humidity (percent)
+  float _temperature, ///< Last reading's temperature (C)
+      _humidity;      ///< Last reading's humidity (percent)
 
   uint16_t _sensorid_humidity; ///< ID number for humidity
   uint16_t _sensorid_temp;     ///< ID number for temperature
@@ -104,9 +103,9 @@ private:
   void _fetchTempCalibrationValues(void);
   void _fetchHumidityCalibrationValues(void);
   friend class Adafruit_AHT10_Temp;     ///< Gives access to private members to
-                                         ///< Temp data object
+                                        ///< Temp data object
   friend class Adafruit_AHT10_Humidity; ///< Gives access to private members to
-                                         ///< Humidity data object
+                                        ///< Humidity data object
 
   void fillTempEvent(sensors_event_t *temp, uint32_t timestamp);
   void fillHumidityEvent(sensors_event_t *humidity, uint32_t timestamp);
