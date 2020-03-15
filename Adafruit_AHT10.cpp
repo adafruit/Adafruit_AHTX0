@@ -101,6 +101,11 @@ bool Adafruit_AHT10::begin(TwoWire *wire, int32_t sensor_id) {
   return true;
 }
 
+/**
+ * @brief  Gets the status (first byte) from AHT10
+ *
+ * @returns 8 bits of status data, or 0xFF if failed
+ */
 uint8_t Adafruit_AHT10::getStatus(void) {
   uint8_t ret;
   if (!i2c_dev->read(&ret, 1)) {

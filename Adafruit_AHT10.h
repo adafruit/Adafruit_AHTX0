@@ -24,12 +24,12 @@
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 
-#define AHT10_I2CADDR_DEFAULT 0x38 ///< AHT10 default i2c address
-#define AHT10_CMD_CALIBRATE 0xE1
-#define AHT10_CMD_TRIGGER 0xAC
-#define AHT10_CMD_SOFTRESET 0xBA
-#define AHT10_STATUS_BUSY 0x80
-#define AHT10_STATUS_CALIBRATED 0x08
+#define AHT10_I2CADDR_DEFAULT 0x38   ///< AHT10 default i2c address
+#define AHT10_CMD_CALIBRATE 0xE1     ///< Calibration command
+#define AHT10_CMD_TRIGGER 0xAC       ///< Trigger reading command
+#define AHT10_CMD_SOFTRESET 0xBA     ///< Soft reset command
+#define AHT10_STATUS_BUSY 0x80       ///< Status bit for busy
+#define AHT10_STATUS_CALIBRATED 0x08 ///< Status bit for calibrated
 
 class Adafruit_AHT10;
 
