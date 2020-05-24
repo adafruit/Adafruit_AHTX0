@@ -1,6 +1,6 @@
 
 /*!
- *  @file Adafruit_AHT1Xcpp
+ *  @file Adafruit_AHT1X.cpp
  *
  *  @mainpage Adafruit AHT10/AHT20 Humidity and Temperature Sensor library
  *
