@@ -254,7 +254,7 @@ void Adafruit_AHTX0_Temp::getSensor(sensor_t *sensor) {
     @returns true
 */
 bool Adafruit_AHTX0_Temp::getEvent(sensors_event_t *event) {
-  _theAHTx0->getEvent(NULL, event);
+  _theAHTX0->getEvent(NULL, event);
 
   return true;
 }
