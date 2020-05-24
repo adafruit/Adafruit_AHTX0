@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['adafruit_5fahtx0',['Adafruit_AHTX0',['../class_adafruit___a_h_t_x0.html#a00aca452eeafa6de6648ef51b26ebf70',1,'Adafruit_AHTX0']]],
-  ['adafruit_5fahtx0_5fhumidity',['Adafruit_AHTX0_Humidity',['../class_adafruit___a_h_t_x0___humidity.html#a1a5554f76c9aae7183c9afda91d16ff6',1,'Adafruit_AHTX0_Humidity']]],
-  ['adafruit_5fahtx0_5ftemp',['Adafruit_AHTX0_Temp',['../class_adafruit___a_h_t_x0___temp.html#a3feee1090b1aa27ece97c99aee579d96',1,'Adafruit_AHTX0_Temp']]]
+  ['adafruit_5faht10',['Adafruit_AHT10',['../class_adafruit___a_h_t10.html#af1b5972c0de097e71fd327ad974445bc',1,'Adafruit_AHT10']]],
+  ['adafruit_5faht10_5fhumidity',['Adafruit_AHT10_Humidity',['../class_adafruit___a_h_t10___humidity.html#ae5a4c97e24666f8d420a5a097110dfc5',1,'Adafruit_AHT10_Humidity']]],
+  ['adafruit_5faht10_5ftemp',['Adafruit_AHT10_Temp',['../class_adafruit___a_h_t10___temp.html#a922ccc0cd9c0c1b950c89a9feaa3e5c0',1,'Adafruit_AHT10_Temp']]]
 ];
