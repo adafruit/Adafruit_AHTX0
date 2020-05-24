@@ -1,8 +1,8 @@
 /*!
  *  @file Adafruit_AHTX0.h
  *
- * 	I2C Driver for the Adafruit AHT10 / AHT20 Humidity and Temperature Sensor
- *library
+ * 	I2C Driver for the Adafruit AHT10 / AHT20 Humidity and Temperature
+ *Sensor library
  *
  * 	This is a library for the Adafruit AHT20 breakout:
  * 	https://www.adafruit.com/products/4566
