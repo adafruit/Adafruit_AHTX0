@@ -23,7 +23,7 @@
  *
  *  @section author Author
  *
- *  Bryan Siepert for Adafruit Industries
+ *  Limor Fried (Adafruit Industries)
  *
  * 	@section license License
  *
