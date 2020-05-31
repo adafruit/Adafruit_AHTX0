@@ -1,8 +1,8 @@
-// Demo for getting individual unified sensor data from the AHT10 Humidity and Temperature sensor
+// Demo for getting individual unified sensor data from the AHT Humidity and Temperature sensor
 
-#include <Adafruit_AHT10.h>
+#include <Adafruit_AHTX0.h>
 
-Adafruit_AHT10 aht;
+Adafruit_AHTX0 aht;
 
 Adafruit_Sensor *aht_humidity, *aht_temp;
 
@@ -11,16 +11,16 @@ void setup(void) {
   while (!Serial)
     delay(10); // will pause Zero, Leonardo, etc until serial console opens
 
-  Serial.println("Adafruit AHT10 test!");
+  Serial.println("Adafruit AHT10/AHT20 test!");
 
   if (!aht.begin()) {
-    Serial.println("Failed to find AHT10 chip");
+    Serial.println("Failed to find AHT10/AHT20 chip");
     while (1) {
       delay(10);
     }
   }
 
-  Serial.println("AHT10 Found!");
+  Serial.println("AHT10/AHT20 Found!");
   aht_temp = aht.getTemperatureSensor();
   aht_temp->printSensorDetails();
 
@@ -40,8 +40,12 @@ void loop() {
   Serial.println(" deg C");
 
   /* Display the results (humidity is measured in % relative humidity (% rH) */
-  Serial.print("\t\tHumidity: ");Serial.print(humidity.relative_humidity);Serial.println(" % rH");
-  Serial.print("\t\tTemperature: ");Serial.print(temp.temperature);Serial.println(" degrees C");
+  Serial.print("\t\tHumidity: ");
+  Serial.print(humidity.relative_humidity);
+  Serial.println(" % rH");
+  Serial.print("\t\tTemperature: ");
+  Serial.print(temp.temperature);
+  Serial.println(" degrees C");
 
 
   delay(100);
