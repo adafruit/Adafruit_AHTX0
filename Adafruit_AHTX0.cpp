@@ -33,7 +33,6 @@
  *     v1.0 - First release
  */
 
-
 #include "Arduino.h"
 
 #include "Adafruit_AHTX0.h"
