@@ -1,14 +1,14 @@
 /*!
- *  @file Adafruit_AHT10.cpp
+ *  @file Adafruit_AHTX0.cpp
  *
- *  @mainpage Adafruit AHT10 Humidity and Temperature Sensor library
+ *  @mainpage Adafruit AHTX0 Humidity and Temperature Sensor library
  *
  *  @section intro_sec Introduction
  *
- * 	I2C Driver for the Adafruit AHT10 Humidity and Temperature Sensor
+ * 	I2C Driver for the Adafruit AHTX0 Humidity and Temperature Sensor
  * library
  *
- * 	This is a library for the Adafruit AHT10 breakout:
+ * 	This is a library for the Adafruit AHT20 breakout:
  * 	https://www.adafruit.com/product/4566
  *
  * 	Adafruit invests time and resources providing this open source code,
