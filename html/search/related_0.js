@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['adafruit_5fahtx0_5fhumidity',['Adafruit_AHTX0_Humidity',['../class_adafruit___a_h_t_x0.html#a174a0b30ecd7d66030a5909e2d407f43',1,'Adafruit_AHTX0']]],
-  ['adafruit_5fahtx0_5ftemp',['Adafruit_AHTX0_Temp',['../class_adafruit___a_h_t_x0.html#ad42a6a927bebfbcb192ba4a27f545873',1,'Adafruit_AHTX0']]]
+  ['adafruit_5faht10_5fhumidity',['Adafruit_AHT10_Humidity',['../class_adafruit___a_h_t10.html#a7c2cdd1e25ca5004cb7eb91d08b694ae',1,'Adafruit_AHT10']]],
+  ['adafruit_5faht10_5ftemp',['Adafruit_AHT10_Temp',['../class_adafruit___a_h_t10.html#acf179025c4c9159a9a2004a0f503f26a',1,'Adafruit_AHT10']]]
 ];
