@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['humidity_5fsensor',['humidity_sensor',['../class_adafruit___a_h_t10.html#aa1c431a72f561cb328206489df0a109c',1,'Adafruit_AHT10']]]
+  ['humidity_5fsensor',['humidity_sensor',['../class_adafruit___a_h_t_x0.html#a49be38c02ed0fa1d75b3922e1f161f98',1,'Adafruit_AHTX0']]]
 ];
