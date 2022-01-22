@@ -87,8 +87,13 @@ bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id) {
     return false;
   }
 
-  while (getStatus() & AHTX0_STATUS_BUSY) {
+  uint8_t count = 0;
+  while ((getStatus() & AHTX0_STATUS_BUSY) && count < 10) {
     delay(10);
+    count++;
+  }
+  if(count == 10) {
+    return false;
   }
   if (!(getStatus() & AHTX0_STATUS_CALIBRATED)) {
     return false;
@@ -131,8 +136,13 @@ bool Adafruit_AHTX0::getEvent(sensors_event_t *humidity,
     return false;
   }
 
-  while (getStatus() & AHTX0_STATUS_BUSY) {
+  uint8_t count = 0;
+  while ((getStatus() & AHTX0_STATUS_BUSY) && count < 10) {
     delay(10);
+    count++;
+  }
+  if(count == 10) {
+    return false;
   }
 
   uint8_t data[6];
