@@ -59,7 +59,8 @@ Adafruit_AHTX0::~Adafruit_AHTX0(void) {
  *            The unique ID to differentiate the sensors from others
  *    @return True if initialization was successful, otherwise false.
  */
-bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id, uint8_t i2c_address) {
+bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id,
+                           uint8_t i2c_address) {
   delay(20); // 20 ms to power up
 
   if (i2c_dev) {

@@ -80,7 +80,8 @@ public:
   Adafruit_AHTX0();
   ~Adafruit_AHTX0();
 
-  bool begin(TwoWire *wire = &Wire, int32_t sensor_id = 0, uint8_t i2c_address = AHTX0_I2CADDR_DEFAULT);
+  bool begin(TwoWire *wire = &Wire, int32_t sensor_id = 0,
+             uint8_t i2c_address = AHTX0_I2CADDR_DEFAULT);
 
   bool getEvent(sensors_event_t *humidity, sensors_event_t *temp);
   uint8_t getStatus(void);
