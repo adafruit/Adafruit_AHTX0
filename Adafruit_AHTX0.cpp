@@ -57,6 +57,8 @@ Adafruit_AHTX0::~Adafruit_AHTX0(void) {
  *            The Wire object to be used for I2C connections.
  *    @param  sensor_id
  *            The unique ID to differentiate the sensors from others
+ *    @param  i2c_address
+ *            The I2C address used to communicate with the sensor
  *    @return True if initialization was successful, otherwise false.
  */
 bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id,
