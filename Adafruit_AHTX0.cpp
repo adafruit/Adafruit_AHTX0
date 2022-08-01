@@ -57,16 +57,19 @@ Adafruit_AHTX0::~Adafruit_AHTX0(void) {
  *            The Wire object to be used for I2C connections.
  *    @param  sensor_id
  *            The unique ID to differentiate the sensors from others
+ *    @param  i2c_address
+ *            The I2C address used to communicate with the sensor
  *    @return True if initialization was successful, otherwise false.
  */
-bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id) {
+bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id,
+                           uint8_t i2c_address) {
   delay(20); // 20 ms to power up
 
   if (i2c_dev) {
     delete i2c_dev; // remove old interface
   }
 
-  i2c_dev = new Adafruit_I2CDevice(AHTX0_I2CADDR_DEFAULT, wire);
+  i2c_dev = new Adafruit_I2CDevice(i2c_address, wire);
 
   if (!i2c_dev->begin()) {
     return false;
