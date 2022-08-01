@@ -79,9 +79,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___a_h_t_x0.html#a00aca452eeafa6de6648ef51b26ebf70">Adafruit_AHTX0</a> ()</td></tr>
 <tr class="memdesc:a00aca452eeafa6de6648ef51b26ebf70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates a new AHTX0 class. <br /></td></tr>
 <tr class="separator:a00aca452eeafa6de6648ef51b26ebf70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a142dbcfa1e989467f6ac7d0ca8280d39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___a_h_t_x0.html#a142dbcfa1e989467f6ac7d0ca8280d39">begin</a> (TwoWire *wire=&amp;Wire, int32_t sensor_id=0)</td></tr>
-<tr class="memdesc:a142dbcfa1e989467f6ac7d0ca8280d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the hardware and initializes I2C.  <a href="#a142dbcfa1e989467f6ac7d0ca8280d39">More...</a><br /></td></tr>
-<tr class="separator:a142dbcfa1e989467f6ac7d0ca8280d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613f6a3bccc1859ec9f34c3ec70fccfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___a_h_t_x0.html#a613f6a3bccc1859ec9f34c3ec70fccfe">begin</a> (TwoWire *wire=&amp;Wire, int32_t sensor_id=0, uint8_t i2c_address=<a class="el" href="_adafruit___a_h_t_x0_8h.html#a3800113c6fa8958588bda681b0200a6f">AHTX0_I2CADDR_DEFAULT</a>)</td></tr>
+<tr class="memdesc:a613f6a3bccc1859ec9f34c3ec70fccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the hardware and initializes I2C.  <a href="#a613f6a3bccc1859ec9f34c3ec70fccfe">More...</a><br /></td></tr>
+<tr class="separator:a613f6a3bccc1859ec9f34c3ec70fccfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f08391ee6bad4c1f520a69aec2b06e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___a_h_t_x0.html#ad2f08391ee6bad4c1f520a69aec2b06e">getEvent</a> (sensors_event_t *humidity, sensors_event_t *temp)</td></tr>
 <tr class="memdesc:ad2f08391ee6bad4c1f520a69aec2b06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the humidity sensor and temperature values as sensor events.  <a href="#ad2f08391ee6bad4c1f520a69aec2b06e">More...</a><br /></td></tr>
 <tr class="separator:ad2f08391ee6bad4c1f520a69aec2b06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,8 +135,8 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that stores state and functions for interacting with the AHT10/AHT20 I2C Temperature/Humidity sensor. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a142dbcfa1e989467f6ac7d0ca8280d39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a142dbcfa1e989467f6ac7d0ca8280d39">&#9670;&nbsp;</a></span>begin()</h2>
+<a id="a613f6a3bccc1859ec9f34c3ec70fccfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613f6a3bccc1859ec9f34c3ec70fccfe">&#9670;&nbsp;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +151,13 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>sensor_id</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>sensor_id</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>i2c_address</em> = <code><a class="el" href="_adafruit___a_h_t_x0_8h.html#a3800113c6fa8958588bda681b0200a6f">AHTX0_I2CADDR_DEFAULT</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -166,6 +172,7 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">wire</td><td>The Wire object to be used for I2C connections. </td></tr>
     <tr><td class="paramname">sensor_id</td><td>The unique ID to differentiate the sensors from others </td></tr>
+    <tr><td class="paramname">i2c_address</td><td>The I2C address used to communicate with the sensor </td></tr>
   </table>
   </dd>
 </dl>
