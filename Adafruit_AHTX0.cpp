@@ -97,6 +97,8 @@ bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id,
     return false;
   }
 
+  delete humidity_sensor;
+  delete temp_sensor;
   humidity_sensor = new Adafruit_AHTX0_Humidity(this);
   temp_sensor = new Adafruit_AHTX0_Temp(this);
   return true;
