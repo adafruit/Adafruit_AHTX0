@@ -83,12 +83,14 @@ bool Adafruit_AHTX0::begin(TwoWire *wire, int32_t sensor_id,
   }
   delay(20);
 
+  while (getStatus() & AHTX0_STATUS_BUSY) {
+    delay(10);
+  }
+
   cmd[0] = AHTX0_CMD_CALIBRATE;
   cmd[1] = 0x08;
   cmd[2] = 0x00;
-  if (!i2c_dev->write(cmd, 3)) {
-    return false;
-  }
+  i2c_dev->write(cmd, 3); // may not 'succeed' on newer AHT20s
 
   while (getStatus() & AHTX0_STATUS_BUSY) {
     delay(10);
