@@ -1,4 +1,5 @@
-// Demo for getting individual unified sensor data from the AHT Humidity and Temperature sensor
+// Demo for getting individual unified sensor data from the AHT Humidity and
+// Temperature sensor
 
 #include <Adafruit_AHTX0.h>
 
@@ -46,7 +47,6 @@ void loop() {
   Serial.print("\t\tTemperature: ");
   Serial.print(temp.temperature);
   Serial.println(" degrees C");
-
 
   delay(100);
 
