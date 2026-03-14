@@ -39,7 +39,8 @@ class Adafruit_AHTX0;
  * of AHT10/AHT20
  *
  */
-class Adafruit_AHTX0_Humidity : public Adafruit_Sensor {
+class Adafruit_AHTX0_Humidity : public Adafruit_Sensor
+{
 public:
   /** @brief Create an Adafruit_Sensor compatible object for the humidity sensor
     @param parent A pointer to the AHTX0 class */
@@ -57,7 +58,8 @@ private:
  * of AHT10/AHT20
  *
  */
-class Adafruit_AHTX0_Temp : public Adafruit_Sensor {
+class Adafruit_AHTX0_Temp : public Adafruit_Sensor
+{
 public:
   /** @brief Create an Adafruit_Sensor compatible object for the temp sensor
       @param parent A pointer to the AHTX0 class */
@@ -75,7 +77,8 @@ private:
  *    @brief  Class that stores state and functions for interacting with
  *            the AHT10/AHT20 I2C Temperature/Humidity sensor
  */
-class Adafruit_AHTX0 {
+class Adafruit_AHTX0
+{
 public:
   Adafruit_AHTX0();
   ~Adafruit_AHTX0();
@@ -87,6 +90,9 @@ public:
   uint8_t getStatus(void);
   Adafruit_Sensor *getTemperatureSensor(void);
   Adafruit_Sensor *getHumiditySensor(void);
+
+  bool triggerEvent();
+  bool fetchEvent(sensors_event_t *humidity, sensors_event_t *temp);
 
 protected:
   float _temperature, ///< Last reading's temperature (C)

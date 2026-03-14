@@ -119,27 +119,21 @@ uint8_t Adafruit_AHTX0::getStatus(void) {
   return ret;
 }
 
-/**************************************************************************/
-/*!
-    @brief  Gets the humidity sensor and temperature values as sensor events
-    @param  humidity Sensor event object that will be populated with humidity
-   data
-    @param  temp Sensor event object that will be populated with temp data
-    @returns true if the event data was read successfully
-*/
-/**************************************************************************/
-bool Adafruit_AHTX0::getEvent(sensors_event_t *humidity,
-                              sensors_event_t *temp) {
-  uint32_t t = millis();
-
+bool Adafruit_AHTX0::triggerEvent() {
   // read the data and store it!
   uint8_t cmd[3] = {AHTX0_CMD_TRIGGER, 0x33, 0};
   if (!i2c_dev->write(cmd, 3)) {
     return false;
   }
+  return true;
+}
 
-  while (getStatus() & AHTX0_STATUS_BUSY) {
-    delay(10);
+bool Adafruit_AHTX0::fetchEvent(sensors_event_t *humidity,
+                              sensors_event_t *temp) {
+  uint32_t t = millis();
+
+  if (getStatus() & AHTX0_STATUS_BUSY) {
+    return false;
   }
 
   uint8_t data[6];
@@ -165,7 +159,29 @@ bool Adafruit_AHTX0::getEvent(sensors_event_t *humidity,
     fillTempEvent(temp, t);
   if (humidity)
     fillHumidityEvent(humidity, t);
+
   return true;
+}
+
+
+/**************************************************************************/
+/*!
+    @brief  Gets the humidity sensor and temperature values as sensor events
+    @param  humidity Sensor event object that will be populated with humidity
+   data
+    @param  temp Sensor event object that will be populated with temp data
+    @returns true if the event data was read successfully
+*/
+/**************************************************************************/
+bool Adafruit_AHTX0::getEvent(sensors_event_t *humidity,
+                              sensors_event_t *temp) {
+  triggerEvent();
+
+  if (getStatus() & AHTX0_STATUS_BUSY) {
+    delay(10);
+  }
+
+  return fetchEvent(humidity,temp);
 }
 
 void Adafruit_AHTX0::fillTempEvent(sensors_event_t *temp, uint32_t timestamp) {
